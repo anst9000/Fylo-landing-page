@@ -1,0 +1,21 @@
+html {
+    font-size: 100%;
+}
+
+*, *:after, *:before {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: calc(16px + 0.3vw);
+    line-height: 1.3;
+}
+
+// Fonts
+$font-title: 'Raleway', sans-serif;
+$font-body: 'Open Sans', sans-serif;
+
+// Colors
+$introBlue: #1b2330;
+$mainBlue: #171e2a;
+$footerBlue: #0a1423;

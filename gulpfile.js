@@ -47,7 +47,7 @@ function minify() {
 function concatCss() {
     // Folder for scss files
     return gulp.src('src/scss/**/*.scss')
-        .pipe(concat('styles.scss'))    // The resultant file
+        .pipe(concat('style.scss'))    // The resultant file
         // Run the files via sass compiler + error checking
         .pipe(sass().on('error', sass.logError))
         .pipe(cleanCSS())               // Removes white spaces
@@ -74,9 +74,10 @@ function watchFiles() {
     })
     gulp.watch('src/scss/**/*.scss', concatCss)
     gulp.watch('src/js/**/*.js', concatJs)
-    gulp.watch('src/**/*.html').on('change', browserSync.reload)
+    gulp.watch('src/**/*.html', copyHtml)
+    gulp.watch('src/scss/**/*.scss').on('change', browserSync.reload)
     gulp.watch('src/js/**/*.js').on('change', browserSync.reload)
-    gulp.watch("src/*.html").on('change', browserSync.reload);
+    gulp.watch('src/**/*.html').on('change', browserSync.reload);
 }
 
 // Export the function to be used in terminal
